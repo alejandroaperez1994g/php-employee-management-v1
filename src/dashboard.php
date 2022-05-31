@@ -39,13 +39,13 @@
                         <li class="sidebar-item active">
                             <a href="./dashboard.php" class='sidebar-link'>
                                 <i class="fa fa-users text-success"></i>
-                                <span>Manage Employee</span>
+                                <span>Manage Team</span>
                             </a>
                         </li>
                         <li class="sidebar-item ">
                             <a href="./employee.php" class='sidebar-link'>
                                 <i class="fa fa-users text-success"></i>
-                                <span>Add Employee</span>
+                                <span>Add Player</span>
                             </a>
                         </li>
                     </ul>
@@ -115,13 +115,13 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>Manage Employee</h3>
+                            <h3>MANAGE TEAM</h3>
                         </div>
                         <div class="col-12 col-md-6 order-md-2 order-first">
                             <nav aria-label="breadcrumb" class='breadcrumb-header'>
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html" class="text-success">Dashboard</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Manage Employee</li>
+                                    <li class="breadcrumb-item active" aria-current="page">Manage Team</li>
                                 </ol>
                             </nav>
                         </div>
@@ -133,42 +133,50 @@
                             <table class='table' id="table1">
                                 <thead>
                                     <tr>
-                                        <th>Emp ID</th>
-                                        <th>Full Name</th>
-                                        <th>Department</th>
-                                        <th>Status</th>
-                                        <th>Reg Date</th>
-                                        <th>Action</th>
+                                        <th>PLAYER</th>
+                                        <th>NICKNAME</th>
+                                        <th>PRICE</th>
+                                        <th>TEAM</th>
+                                        <th>POSITION</th>
+                                        <th>AGE</th>
+                                        <th>NATIONALITY</th>
+                                        <th>EDIT</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>123456</td>
-                                        <td>John Doe</td>
+                                        <td>Javi</td>
+                                        <td>Javi</td>
+                                        <td>10.000.000 €</td>
                                         <td>IT</td>
                                         <td>
                                             <span class="badge bg-success">Active</span>
                                         </td>
+                                        <td>2021-11-01</td>
                                         <td>2021-11-01</td>
                                         <td><a href="editDesignation.php"><i class="fa fa-pen text-success"></i></a> <a href="editDesignation.php"><i class="fa fa-trash text-danger"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>153424</td>
                                         <td>Jane Doe</td>
+                                        <td>Jane Doe</td>
                                         <td>HR</td>
                                         <td>
                                             <span class="badge bg-danger">Deactivated</span>
                                         </td>
+                                        <td>2021-11-01</td>
                                         <td>2021-11-01</td>
                                         <td><a href="editDesignation.php"><i class="fa fa-pen text-success"></i></a> <a href="editDesignation.php"><i class="fa fa-trash text-danger"></i></a></td>
                                     </tr>
                                     <tr>
                                         <td>564355</td>
                                         <td>Juan Dela Cruz</td>
+                                        <td>Juan Dela Cruz</td>
                                         <td>ENGINEERING</td>
                                         <td>
                                             <span class="badge bg-success">Active</span>
                                         </td>
+                                        <td>2021-11-01</td>
                                         <td>2021-11-01</td>
                                         <td><a href="editDesignation.php"><i class="fa fa-pen text-success"></i></a> <a href="editDesignation.php"><i class="fa fa-trash text-danger"></i></a></td>
                                     </tr>
