@@ -1,3 +1,12 @@
+<?php
+    session_start();
+    if (!isset($_SESSION['useremail'])) {
+        header("Location: ../index.php?invalid_permission");
+
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -90,7 +99,7 @@
                                 <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
                                 <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="login.html"><i data-feather="log-out"></i> Logout</a>
+                                <a class="dropdown-item" href="./library/loginController.php"><i data-feather="log-out"></i> Logout</a>
                             </div>
                         </li>
                     </ul>
