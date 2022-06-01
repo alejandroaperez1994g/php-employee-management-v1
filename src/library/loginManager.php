@@ -15,7 +15,7 @@ function validateUser($email, $password)
         $_SESSION['password'] = $password;
         header("Location: ../../assets/html/dashboard-info.html");
     } else {
-        header("Location: ../../index.php");
+        header("Location: ../../index.php?auth_error");
     }
 }
 //* function that autenticate de user
@@ -26,4 +26,14 @@ function authUser($post)
     $userPassword = $post['password'];
 
     validateUser($userEmail, $userPassword);
+}
+
+function checkUrl($get)
+{
+    if (isset($get['auth_error'])) {
+        echo '<div class="alert alert-danger" role="alert">
+        Error al iniciar sesión
+      </div>';
+    }
+
 }

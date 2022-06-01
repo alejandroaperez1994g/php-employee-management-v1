@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,18 +39,19 @@
                                 <div class="form-group position-relative has-icon-left">
                                     <div class="clearfix">
                                         <label for="password">Password</label>
-                                        <a href="#" class='float-end'>
-                                            <small>Forgot password?</small>
-                                        </a>
+
                                     </div>
                                     <div class="position-relative">
                                         <input type="password" class="form-control" id="password" name="password">
                                         <div class="form-control-icon">
                                             <i class="fa fa-key"></i>
                                         </div>
+
                                     </div>
                                 </div>
-
+                            <?php require ("./src/library/loginManager.php");
+                            checkUrl($_GET);
+                            ?>
 
                                 <div class="clearfix">
                                     <button class="btn btn-primary float-end">Login</button>
