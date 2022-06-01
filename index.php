@@ -2,13 +2,8 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="./assets/css/bootstrap.css">
-
-    <script defer src="assets/fontawesome/js/all.min.js"></script>
-    <link rel="stylesheet" href="./assets/css/app.css">
+<title>Login</title>
+<?php include './includes/head.php';?>
 </head>
 
 <body>
@@ -59,10 +54,7 @@
         </div>
 
     </div>
-    <script src="./assets/js/feather-icons/feather.min.js"></script>
-    <script src="./assets/js/app.js"></script>
-
-    <script src="./assets/js/main.js"></script>
+    <?php include './includes/footer.php';?>
 </body>
 
 </html>
