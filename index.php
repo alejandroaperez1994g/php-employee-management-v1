@@ -2,8 +2,13 @@
 <html lang="en">
 
 <head>
-<title>Login</title>
-<?php include './includes/head.php';?>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/24229652dd.js" crossorigin="anonymous"></script>
+    <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/app.css">
 </head>
 
 <body>
@@ -17,13 +22,13 @@
                             <div class="text-center mb-5">
                                 <h3>Sign In</h3>
                             </div>
-                            <form action="employee.html">
+                            <form action="./src/library/loginController.php" method="POST">
                                 <div class="form-group position-relative has-icon-left">
-                                    <label for="username">Username</label>
+                                    <label for="username">Email</label>
                                     <div class="position-relative">
-                                        <input type="text" class="form-control" id="username">
+                                        <input type="email" class="form-control" id="email" name="email">
                                         <div class="form-control-icon">
-                                            <i class="fa fa-user"></i>
+                                            <i class="fa-solid fa-at"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -35,7 +40,7 @@
                                         </a>
                                     </div>
                                     <div class="position-relative">
-                                        <input type="password" class="form-control" id="password">
+                                        <input type="password" class="form-control" id="password" name="password">
                                         <div class="form-control-icon">
                                             <i class="fa fa-key"></i>
                                         </div>
@@ -54,7 +59,10 @@
         </div>
 
     </div>
-    <?php include './includes/footer.php';?>
+    <script src="./assets/js/feather-icons/feather.min.js"></script>
+    <script src="./assets/js/app.js"></script>
+
+    <script src="./assets/js/main.js"></script>
 </body>
 
 </html>
