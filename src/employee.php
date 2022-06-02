@@ -175,9 +175,9 @@ if (!isset($_SESSION['useremail'])) {
                                                 </div>
                                                 <div class="col-md-4 col-12">
                                                     <div class="form-group has-icon-left">
-                                                        <label for="first-name-icon">NICKNAME</label>
+                                                        <label for="first-name-icon">LAST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="NICKNAME" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="LAST NAME" id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -186,9 +186,9 @@ if (!isset($_SESSION['useremail'])) {
                                                 </div>
                                                 <div class="col-md-4 col-12">
                                                     <div class="form-group has-icon-left">
-                                                        <label for="first-name-icon">LAST NAME</label>
+                                                        <label for="first-name-icon">NICKNAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="LAST NAME" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="NICKNAME" id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>

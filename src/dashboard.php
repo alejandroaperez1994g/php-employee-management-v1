@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['useremail'])) {
-        header("Location: ../index.php?invalid_permission");
-
-    }
+session_start();
+require("../src/library/employeeManager.php");
+if (!isset($_SESSION['useremail'])) {
+    header("Location: ../index.php?invalid_permission");
+}
 
 ?>
 
@@ -11,8 +11,8 @@
 <html lang="en">
 
 <head>
-<title>Manage Team</title>
-<?php include './includes/head.php';?>
+    <title>Manage Team</title>
+    <?php include './includes/head.php'; ?>
 </head>
 
 <body>
@@ -139,42 +139,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Javi</td>
-                                        <td>Javi</td>
-                                        <td>10.000.000 €</td>
-                                        <td>IT</td>
-                                        <td>
-                                            <span class="badge bg-success">Active</span>
-                                        </td>
-                                        <td>2021-11-01</td>
-                                        <td>2021-11-01</td>
-                                        <td><a href="editDesignation.php"><i class="fa fa-pen text-success"></i></a> <a href="editDesignation.php"><i class="fa fa-trash text-danger"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>153424</td>
-                                        <td>Jane Doe</td>
-                                        <td>Jane Doe</td>
-                                        <td>HR</td>
-                                        <td>
-                                            <span class="badge bg-danger">Deactivated</span>
-                                        </td>
-                                        <td>2021-11-01</td>
-                                        <td>2021-11-01</td>
-                                        <td><a href="editDesignation.php"><i class="fa fa-pen text-success"></i></a> <a href="editDesignation.php"><i class="fa fa-trash text-danger"></i></a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>564355</td>
-                                        <td>Juan Dela Cruz</td>
-                                        <td>Juan Dela Cruz</td>
-                                        <td>ENGINEERING</td>
-                                        <td>
-                                            <span class="badge bg-success">Active</span>
-                                        </td>
-                                        <td>2021-11-01</td>
-                                        <td>2021-11-01</td>
-                                        <td><a href="editDesignation.php"><i class="fa fa-pen text-success"></i></a> <a href="editDesignation.php"><i class="fa fa-trash text-danger"></i></a></td>
-                                    </tr>
+                                    <?php showAllData() ?>
                                 </tbody>
                             </table>
                         </div>
@@ -185,7 +150,7 @@
         </div>
     </div>
 
-    <?php include './includes/footer.php';?>
+    <?php include './includes/footer.php'; ?>
 </body>
 
 </html>
