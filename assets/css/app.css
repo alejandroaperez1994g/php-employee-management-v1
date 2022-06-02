@@ -699,10 +699,9 @@ footer {
   background-size: cover;
   background-color: #221833;
   bottom: 0;
-  border-right: 1px solid #eee;
-  box-shadow: 0 0 10px #ececec;
-  left: -260px;
+  box-shadow: 7px 0px 11px #69607161;
   transition: left 0.6s ease-out;
+  border-right: #9199b9 5px solid;
 }
 .sidebar-wrapper .sidebar-header {
   padding: 2rem 2rem 1rem;
