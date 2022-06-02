@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if (!isset($_SESSION['useremail'])) {
-        header("Location: ../index.php?invalid_permission");
-    }
+session_start();
+if (!isset($_SESSION['useremail'])) {
+    header("Location: ../index.php?invalid_permission");
+}
 
 ?>
 
@@ -10,8 +10,8 @@
 <html lang="en">
 
 <head>
-<title>Add Player</title>
-<?php include './includes/head.php';?>
+    <title>Add Player</title>
+    <?php include './includes/head.php'; ?>
 </head>
 
 <body>
@@ -154,7 +154,7 @@
                                                                     <option>GOALKEEPER</option>
                                                                     <option>DEFENDER</option>
                                                                     <option>MIDFIELDER</option>
-                                                                    <option>FOWARD</option>
+                                                                    <option>FORWARD</option>
                                                                     <option>CENTERBACK</option>
                                                                     <option>WINGER</option>
                                                                 </select>
@@ -293,7 +293,7 @@
 
         </div>
     </div>
-    <?php include './includes/footer.php';?>
+    <?php include './includes/footer.php'; ?>
 
 
 </body>
