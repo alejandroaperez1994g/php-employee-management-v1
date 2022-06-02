@@ -684,13 +684,20 @@ footer {
 #sidebar:not(.active) ~ #main {
   margin-left: 0;
 }
+
+/* Using css */
+.sidebar-menu {
+  margin: 70px 0px;
+}
 .sidebar-wrapper {
   width: 260px;
   height: 100vh;
   position: fixed;
   top: 0;
   z-index: 10;
-  background-color: #fff;
+  background-image: url("../images/sideB.jpg");
+  background-size: cover;
+  background-color: #221833;
   bottom: 0;
   border-right: 1px solid #eee;
   box-shadow: 0 0 10px #ececec;
@@ -703,7 +710,8 @@ footer {
   font-weight: 700;
 }
 .sidebar-wrapper .sidebar-header img {
-  height: 2.5rem;
+  height: 3rem;
+  margin: 20px 5px;
 }
 .sidebar-wrapper .sidebar-toggler.x {
   position: absolute;
@@ -734,7 +742,7 @@ footer {
   opacity: 1;
 }
 .sidebar-wrapper .menu .sidebar-link > span {
-  color: #053382;
+  color: #f5f3f7;
   font-weight: 500;
   margin-left: 1rem;
   opacity: 0.8;
@@ -753,7 +761,7 @@ footer {
   display: block;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link {
-  background-color: #e8f3ff;
+  background-color: #3c3456;
 }
 .sidebar-wrapper .menu .sidebar-item.active .sidebar-link:before {
   content: "";
@@ -762,7 +770,7 @@ footer {
   height: 100%;
   top: 0;
   bottom: 0;
-  background-color: rgba(46, 170, 244, 0.5);
+  background-color: #bbd8ff;
   width: 5px;
 }
 .sidebar-wrapper .menu .submenu {
