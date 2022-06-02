@@ -21,7 +21,7 @@ function showAllData()
         <td>{$value['position']}</td>
         <td>{$value['age']}</td>
         <td>{$value['nationality']}</td>
-        <td><a href='editDesignation.php'><i class='fa fa-pen text-success'></i></a> <a href='editDesignation.php'><i class='fa fa-trash text-danger'></i></a></td>
+        <td><a href='editDesignation.php'><i class='fa fa-pen text-success'></i></a> <a data-delete-button data-id='{$value['id']}' data-bs-toggle='modal' data-bs-target='#confirmation-delete' href='#'><i class='fa fa-trash text-danger'></i></a></td>
     </tr>
     ";
     }
