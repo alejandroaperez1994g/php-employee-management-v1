@@ -1,17 +1,17 @@
 [
     {
         "id": 1,
-        "name": "Javier",
-        "lastName": "Fernández",
-        "nickname": "Javi",
-        "player": "Pichichi",
-        "position": "forward",
-        "age": 24,
-        "nationality": "spain",
+        "name": "Lionel",
+        "lastName": "Messi",
+        "nickname": "Leo Messi",
+        "player": "La pulga",
+        "position": "FORWARD",
+        "age": 30,
+        "nationality": "ARGENTINA",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
-        "price": 100000,
-        "team": "frontend"
+        "profilePicture": "",
+        "price": 10000000,
+        "team": "FRONTEND"
     },
     {
         "id": 2,
@@ -23,9 +23,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "BACKEND"
     },
     {
         "id": 3,
@@ -37,9 +37,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "FRONTEND"
     },
     {
         "id": 4,
@@ -51,9 +51,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "BACKEND"
     },
     {
         "id": 5,
@@ -65,9 +65,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "FRONTEND"
     },
     {
         "id": 6,
@@ -79,9 +79,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "FULLSTACK"
     },
     {
         "id": 7,
@@ -93,9 +93,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "FRONTEND"
     },
     {
         "id": 8,
@@ -107,9 +107,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "FULLSTACK"
     },
     {
         "id": 9,
@@ -121,9 +121,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "FRONTEND"
     },
     {
         "id": 10,
@@ -135,9 +135,9 @@
         "age": 24,
         "nationality": "spain",
         "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
-        "profile": "",
+        "profilePicture": "",
         "price": 100000,
-        "team": "frontend"
+        "team": "BACKEND"
     }
 
 ]
