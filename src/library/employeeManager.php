@@ -27,6 +27,7 @@ function showAllData()
     }
 }
 
+//* classify the team value and return respective badge
 function classifyTeam($team)
 {
     switch ($team) {
@@ -40,4 +41,33 @@ function classifyTeam($team)
             echo "<span class='badge bg-success'>{$team}</span>";
             break;
     }
+}
+
+
+//* add form data to .json file
+function addPlayer($post)
+{
+    // Read the JSON file 
+    $employeesJSON = file_get_contents('../../resources/employees.json');
+
+    // Decode the JSON file
+    $jsonData = json_decode($employeesJSON, true);
+    $lastId = end($jsonData)['id'];
+
+
+
+    // New Array
+    $newArray = array();
+    $newArray['id'] = $lastId + 1;
+
+    foreach ($post as $key => $value) {
+        $newArray[$key] = $value;
+    }
+
+    array_push($jsonData, $newArray);
+
+    $json = json_encode($jsonData);
+
+    file_put_contents("../../resources/employees.json", $json);
+    header("Location: ../dashboard.php");
 }

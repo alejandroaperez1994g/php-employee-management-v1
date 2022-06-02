@@ -131,13 +131,13 @@ if (!isset($_SESSION['useremail'])) {
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form class="form">
+                                        <form class="form" action='./library/employeeController.php?add_player' method="POST">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PLAYER</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PLAYER NAME" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="PLAYER NAME" name='player' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa-solid fa-futbol"></i>
                                                             </div>
@@ -149,7 +149,7 @@ if (!isset($_SESSION['useremail'])) {
                                                         <label for="first-name-icon">POSITION</label>
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <select class="form-select" id="basicSelect">
+                                                                <select class="form-select" name='position' id="basicSelect">
                                                                     <option>SELECT YOUR POSITION</option>
                                                                     <option>GOALKEEPER</option>
                                                                     <option>DEFENDER</option>
@@ -166,7 +166,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">FIRST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="FIRST NAME" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="FIRST NAME" name='first-name' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -177,7 +177,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">LAST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="LAST NAME" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="LAST NAME" name='last-name' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -188,7 +188,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">NICKNAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="NICKNAME" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="NICKNAME" name='nickname' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -199,7 +199,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">AGE</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="AGE" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="AGE" name='age' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -211,7 +211,7 @@ if (!isset($_SESSION['useremail'])) {
                                                         <label for="first-name-icon">NATIONALITY</label>
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <select class="form-select" id="basicSelect">
+                                                                <select class="form-select" name='nationality' id="basicSelect">
                                                                     <option>SELECT YOUR COUNTRY</option>
                                                                     <option>SPAIN</option>
                                                                     <option>USA</option>
@@ -233,7 +233,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">CONTACT</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="LINKEDIN PROFILE" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="LINKEDIN PROFILE" name='contact' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-phone"></i>
                                                             </div>
@@ -244,7 +244,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PROFILE</label>
                                                         <div class="position-relative">
-                                                            <input type="file" class="form-control" placeholder="" id="first-name-icon">
+                                                            <input type="file" class="form-control" placeholder="" name='profile' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -255,7 +255,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PRICE</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PRICE" id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="PRICE" name='price' id="first-name-icon">
                                                             <div class="form-control-icon">
                                                                 <i class="fa-solid fa-sack-dollar"></i>
                                                             </div>
@@ -267,7 +267,7 @@ if (!isset($_SESSION['useremail'])) {
                                                         <label for="first-name-icon">TEAM</label>
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <select class="form-select" id="basicSelect">
+                                                                <select class="form-select" id="basicSelect" name='team'>
                                                                     <option>SELECT YOUR TEAM</option>
                                                                     <option>FRONTEND</option>
                                                                     <option>BACKEND</option>
