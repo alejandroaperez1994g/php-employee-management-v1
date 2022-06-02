@@ -702,7 +702,9 @@ footer {
   box-shadow: 7px 0px 11px #69607161;
   transition: left 0.6s ease-out;
   border-right: #9199b9 5px solid;
+  left: -260px;
 }
+
 .sidebar-wrapper .sidebar-header {
   padding: 2rem 2rem 1rem;
   font-size: 2rem;
