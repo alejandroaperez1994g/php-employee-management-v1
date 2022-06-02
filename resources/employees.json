@@ -8,7 +8,7 @@
         "position": "FORWARD",
         "age": 30,
         "nationality": "ARGENTINA",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 10000000,
         "team": "FRONTEND"
@@ -16,13 +16,13 @@
     {
         "id": 2,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "BACKEND"
@@ -30,13 +30,13 @@
     {
         "id": 3,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "FRONTEND"
@@ -44,13 +44,13 @@
     {
         "id": 4,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "BACKEND"
@@ -58,13 +58,13 @@
     {
         "id": 5,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "FRONTEND"
@@ -72,13 +72,13 @@
     {
         "id": 6,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "FULLSTACK"
@@ -86,13 +86,13 @@
     {
         "id": 7,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "FRONTEND"
@@ -100,13 +100,13 @@
     {
         "id": 8,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "FULLSTACK"
@@ -114,13 +114,13 @@
     {
         "id": 9,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "FRONTEND"
@@ -128,16 +128,29 @@
     {
         "id": 10,
         "name": "Javier",
-        "lastName": "Fernández",
+        "lastName": "Fern\u00e1ndez",
         "nickname": "Javi",
         "player": "Pichichi",
         "position": "forward",
         "age": 24,
         "nationality": "spain",
-        "contact": "https://www.linkedin.com/in/javier-fern%C3%A1ndez-029246233/",
+        "contact": "https:\/\/www.linkedin.com\/in\/javier-fern%C3%A1ndez-029246233\/",
         "profilePicture": "",
         "price": 100000,
         "team": "BACKEND"
+    },
+    {
+        "id": 11,
+        "player": "Ronaldinho",
+        "position": "MIDFIELDER",
+        "first-name": "Ronaldo",
+        "last-name": "De Asis",
+        "nickname": "El Gaucho",
+        "age": "42",
+        "nationality": "BRAZIL",
+        "contact": "asdasdas",
+        "profile": "",
+        "price": "10000000",
+        "team": "FULLSTACK"
     }
-
 ]
