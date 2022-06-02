@@ -29,23 +29,7 @@ function authUser($post)
 
     validateUser($userEmail, $userPassword);
 }
-//* function that check $_GET super variable,depending on the url it returns one message or another
-function checkUrl($get)
-{
-    if (isset($get['auth_error'])) {
-        echo '<div class="alert alert-danger" role="alert">
-        This email or password is incorrect.
-      </div>';
-    } elseif (isset($get['logout'])) {
-        echo '<div class="alert alert-success" role="alert">
-        You have been successfully logged out.
-      </div>';
-    } elseif (isset($get['invalid_permission'])) {
-        echo '<div class="alert alert-danger" role="alert">
-        You do not have permission to access this page.
-      </div>';
-    }
-}
+
 //* function that logout the user, unset $_SESSION, destroy cookies and redirects to login page
 function logout()
 {

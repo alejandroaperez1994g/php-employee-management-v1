@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['useremail'])) {
     header("Location: ../index.php?invalid_permission");
 }
@@ -121,7 +122,15 @@ if (!isset($_SESSION['useremail'])) {
                         </div>
                     </div>
 
+
+
                 </div>
+                <div class="notification">
+                    <?php require("../src/library/sessionHelper.php");
+                    checkUrl($_GET);
+                    ?>
+                </div>
+
 
 
                 <!-- // Basic multiple Column Form section start -->

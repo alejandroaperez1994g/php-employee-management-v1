@@ -68,6 +68,9 @@ function addPlayer($post)
 
     $json = json_encode($jsonData);
 
-    file_put_contents("../../resources/employees.json", $json);
-    header("Location: ../dashboard.php");
+    if (file_put_contents('../../resources/employees.json', $json)) {
+        header('location: ../../employee.php?player_added_successfully');
+    } else {
+        header('location: ../../employee.php?error');
+    }
 }

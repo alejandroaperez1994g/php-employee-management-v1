@@ -49,9 +49,9 @@
 
                                     </div>
                                 </div>
-                            <?php require ("./src/library/loginManager.php");
-                            checkUrl($_GET);
-                            ?>
+                                <?php require("./src/library/sessionHelper.php");
+                                checkUrl($_GET);
+                                ?>
 
                                 <div class="clearfix">
                                     <button class="btn btn-primary float-end">Login</button>
