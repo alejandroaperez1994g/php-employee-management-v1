@@ -121,7 +121,7 @@ if (!isset($_SESSION['useremail'])) {
                                         <th>EDIT</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id='dashboard-body'>
                                     <?php showAllData() ?>
                                 </tbody>
                             </table>

@@ -21,7 +21,11 @@ function showAllData()
         <td>{$value['position']}</td>
         <td>{$value['age']}</td>
         <td>{$value['nationality']}</td>
-        <td><a href='editDesignation.php'><i class='fa fa-pen text-success'></i></a> <a data-delete-button data-id='{$value['id']}' data-bs-toggle='modal' data-bs-target='#confirmation-delete' href='#'><i class='fa fa-trash text-danger'></i></a></td>
+        <td>
+        <a data-delete-button data-id='{$value['id']}' data-bs-toggle='modal' data-bs-target='#confirmation-delete' href='#'>
+        <i class='fa fa-trash text-danger'></i>
+        </a>
+        </td>
     </tr>
     ";
     }
@@ -69,9 +73,9 @@ function addPlayer($post)
     $json = json_encode($jsonData);
 
     if (file_put_contents('../../resources/employees.json', $json)) {
-        header('location: ../../employee.php?player_added_successfully');
+        header('location: ../../src/employee.php?player_added_successfully');
     } else {
-        header('location: ../../employee.php?error');
+        header('location: ../../src/employee.php?error');
     }
 }
 
