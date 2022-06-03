@@ -1,6 +1,9 @@
+const { data } = require("jquery");
+
+//*get all data from .json file employees.json
 const getAllData = async () => {
   const response = await fetch("../../resources/employees.json");
-  const data = await response.json();
+  const data = await response.json(); //* converts the response to json
   return data;
 };
 
@@ -10,13 +13,20 @@ const updateDashboard = async () => {
   const backEndCard = document.getElementById("backend");
   const fullStackCard = document.getElementById("fullstack");
 
-  const data = await getAllData();
+  const totalOfPlayers = await getAllData();
 
-  const totalFrontEnd = data.filter((player) => player.team === "FRONTEND");
-  const totalBackEnd = data.filter((player) => player.team === "BACKEND");
-  const totalFullStack = data.filter((player) => player.team === "FULLSTACK");
+  const totalFrontEnd = totalOfPlayers.filter(
+    (player) => player.team === "FRONTEND"
+  );
+  const totalBackEnd = totalOfPlayers.filter(
+    (player) => player.team === "BACKEND"
+  );
+  const totalFullStack = totalOfPlayers.filter(
+    (player) => player.team === "FULLSTACK"
+  );
 
-  totalPlayer.textContent = data.length;
+  //*set the lenght of respective players teams
+  totalPlayer.textContent = totalOfPlayers.length;
   frontEndCard.textContent = totalFrontEnd.length;
   backEndCard.textContent = totalBackEnd.length;
   fullStackCard.textContent = totalFullStack.length;
