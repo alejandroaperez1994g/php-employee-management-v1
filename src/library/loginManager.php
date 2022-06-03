@@ -29,22 +29,3 @@ function authUser($post)
 
     validateUser($userEmail, $userPassword);
 }
-
-//* function that logout the user, unset $_SESSION, destroy cookies and redirects to login page
-function logout()
-{
-    unset($_SESSION);
-    if (ini_get("session.use_cookies")) {
-        $params = session_get_cookie_params();
-        setcookie(
-            session_name(),
-            '',
-            time() - 42000,
-            $params["path"],
-            $params["domain"],
-            $params["secure"],
-            $params["httponly"]
-        );
-    }
-    header("Location: ../../index.php?logout");
-}
