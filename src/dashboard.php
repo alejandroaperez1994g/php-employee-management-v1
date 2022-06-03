@@ -13,6 +13,8 @@ if (!isset($_SESSION['useremail'])) {
 <head>
     <title>Manage Team</title>
     <?php include './includes/head.php'; ?>
+    <!-- Custom JS -->
+    <script src="../assets/js/index.js" type="module"></script>
 </head>
 
 <body>
@@ -65,26 +67,7 @@ if (!isset($_SESSION['useremail'])) {
                             <div class="dropdown-menu dropdown-menu-end dropdown-menu-large">
                                 <h6 class='py-2 px-4'>Notifications</h6>
                                 <ul class="list-group rounded-none">
-                                    <li class="list-group-item border-0 align-items-start">
-                                        <div class="row mb-2">
-                                            <div class="col-md-12 notif">
-                                                <a href="leave_details.html">
-                                                    <h6 class='text-bold'>John Doe</h6>
-                                                    <p class='text-xs'>
-                                                        applied for leave at 05-21-2021
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <div class="col-md-12 notif">
-                                                <a href="leave_details.html">
-                                                    <h6 class='text-bold'>Jane Doe</h6>
-                                                    <p class='text-xs'>
-                                                        applied for leave at 05-21-2021
-                                                    </p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </li>
+
                                 </ul>
                             </div>
                         </li>
@@ -146,6 +129,25 @@ if (!isset($_SESSION['useremail'])) {
                     </div>
 
                 </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Confirmation Modal👇🏻 -->
+    <div class="modal fade" id="confirmation-delete" tabindex="-1" aria-labelledby="confirmation-delete" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmation-delete">Caution</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want delete this player?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                    <button type="button" id='deletePlayer' data-bs-dismiss="modal" class="btn btn-primary">Yes</button>
+                </div>
             </div>
         </div>
     </div>

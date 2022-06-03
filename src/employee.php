@@ -13,6 +13,8 @@ if (!isset($_SESSION['useremail'])) {
 <head>
     <title>Add Player</title>
     <?php include './includes/head.php'; ?>
+    <!-- Custom JS -->
+    <script src="../assets/js/index.js" type="module"></script>
 </head>
 
 <body>
@@ -302,6 +304,10 @@ if (!isset($_SESSION['useremail'])) {
 
         </div>
     </div>
+
+
+
+
     <?php include './includes/footer.php'; ?>
 
 

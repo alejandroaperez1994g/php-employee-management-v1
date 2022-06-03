@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.css">
     <script src="https://kit.fontawesome.com/24229652dd.js" crossorigin="anonymous"></script>
     <script defer src="assets/fontawesome/js/all.min.js"></script>
+    <!-- Custom JS -->
+    <script src="./assets/js/index.js" type="module"></script>
     <link rel="stylesheet" href="./assets/css/app.css">
 </head>
 
