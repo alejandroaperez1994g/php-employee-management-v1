@@ -1,5 +1,3 @@
-const { data } = require("jquery");
-
 //*get all data from .json file employees.json
 const getAllData = async () => {
   const response = await fetch("../../resources/employees.json");
