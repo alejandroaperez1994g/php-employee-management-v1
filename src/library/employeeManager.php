@@ -74,3 +74,27 @@ function addPlayer($post)
         header('location: ../../employee.php?error');
     }
 }
+
+function deletePlayer($data)
+{
+    // print_r($data['id']);
+
+    // Read the JSON file 
+    $employeesJSON = file_get_contents('../../resources/employees.json');
+
+    // Decode the JSON file
+    $jsonData = json_decode($employeesJSON, true);
+
+    foreach ($jsonData as $key => $value) {
+        if ($value['id'] === intval($data['id'])) {
+            unset($jsonData[$key]);
+        }
+    }
+
+    $json = json_encode($jsonData);
+    if (file_put_contents('../../resources/employees.json', $json)) {
+        echo $json;
+    } else {
+        echo 'no se guardo';
+    }
+}

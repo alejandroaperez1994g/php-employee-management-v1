@@ -133,7 +133,7 @@ if (!isset($_SESSION['useremail'])) {
         </div>
     </div>
 
-    //* Delete Confirmation Modal👇🏻
+    <!-- Delete Confirmation Modal👇🏻 -->
     <div class="modal fade" id="confirmation-delete" tabindex="-1" aria-labelledby="confirmation-delete" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

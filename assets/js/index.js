@@ -10,5 +10,22 @@ Array.from(deleteButtons).map((button) => {
 });
 
 confirmationButton.addEventListener("click", (e) => {
-  console.log(`Delete player with ID ${dataID}`);
+  deletePlayer(dataID);
 });
+
+const deletePlayer = (id) => {
+  const response = fetch(
+    "http://localhost:8080/php-employee-management-v1/src/library/employeeController.php",
+    {
+      method: "DELETE",
+      headers: { "content-type": "application/json; chartset=UTF-8" },
+      body: JSON.stringify({
+        id: id,
+      }),
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => updateDashboard(data));
+};
+
+const updateDashboard = (data) => {};
