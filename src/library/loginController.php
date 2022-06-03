@@ -1,5 +1,6 @@
 <?php
 require('./loginManager.php');
+require('./sessionHelper.php');
 
 
 
