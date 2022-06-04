@@ -1,3 +1,5 @@
+const dashboardInfo = document.getElementById("app");
+
 //*get all data from .json file employees.json
 const getAllData = async () => {
   const response = await fetch("../../resources/employees.json");
@@ -5,7 +7,8 @@ const getAllData = async () => {
   return data;
 };
 
-const updateDashboard = async () => {
+//* update de dashboard-info.html cards elements
+const updateDashboardCards = async () => {
   const totalPlayer = document.getElementById("total-players");
   const frontEndCard = document.getElementById("frontend");
   const backEndCard = document.getElementById("backend");
@@ -13,21 +16,21 @@ const updateDashboard = async () => {
 
   const totalOfPlayers = await getAllData();
 
-  const totalFrontEnd = totalOfPlayers.filter(
+  const totalFrontEnd = Object.values(totalOfPlayers).filter(
     (player) => player.team === "FRONTEND"
   );
-  const totalBackEnd = totalOfPlayers.filter(
+  const totalBackEnd = Object.values(totalOfPlayers).filter(
     (player) => player.team === "BACKEND"
   );
-  const totalFullStack = totalOfPlayers.filter(
+  const totalFullStack = Object.values(totalOfPlayers).filter(
     (player) => player.team === "FULLSTACK"
   );
 
   //*set the lenght of respective players teams
-  totalPlayer.textContent = totalOfPlayers.length;
+  totalPlayer.textContent = Object.values(totalOfPlayers).length;
   frontEndCard.textContent = totalFrontEnd.length;
   backEndCard.textContent = totalBackEnd.length;
   fullStackCard.textContent = totalFullStack.length;
 };
 
-updateDashboard();
+updateDashboardCards();
