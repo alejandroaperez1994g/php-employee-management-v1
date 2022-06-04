@@ -1,3 +1,5 @@
+const returnButton = document.getElementById("return-button");
+
 window.onload = function () {
   let playerInfo = sessionStorage.getItem("playerInfo");
 
@@ -7,8 +9,14 @@ window.onload = function () {
   }
 };
 
+returnButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  location.href = "dashboard.php";
+});
+
 const updateForm = (playerInfo) => {
   console.log(playerInfo);
+  const playerId = document.getElementById("id");
   const player = document.getElementById("player");
   const playerPosition = document.getElementById("position");
   const playerName = document.getElementById("firstName");
@@ -21,6 +29,7 @@ const updateForm = (playerInfo) => {
   const playerPrice = document.getElementById("price");
   const playerTeam = document.getElementById("team");
 
+  playerId.value = playerInfo.id;
   player.value = playerInfo.player;
   playerName.value = playerInfo.name;
   playerLastName.value = playerInfo.lastName;
