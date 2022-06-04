@@ -151,7 +151,7 @@ require('./library/employeeManager.php');
                                         <form id='player-form' class="form" action='./library/employeeController.php?add_player' method="POST">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
-                                                    <input type="text" name='id' value="<?php echo $player['id'] ?>" hidden>
+                                                    <input type="text" name='id' id='id' value="<?php echo $player['id'] ?>" hidden>
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PLAYER</label>
                                                         <div class="position-relative">
@@ -276,8 +276,8 @@ require('./library/employeeManager.php');
                                                     </div>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">
-                                                    <button class="btn btn-secondary me-1 mb-1">Return</button> //TODO agreagar una redireccion a dashboard.php x javascript
-                                                    <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
+                                                    <button id='return-button' class="btn btn-secondary me-1 mb-1">Return</button> //TODO agreagar una redireccion a dashboard.php x javascript
+                                                    <button id='submit-button' type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                                 </div>
                                             </div>
                                         </form>
