@@ -177,3 +177,40 @@ function showNationalitys($nationality)
         }
     }
 }
+
+function getJSON()
+{
+    // Read the JSON file 
+    $employeesJSON = file_get_contents('../../resources/employees.json');
+
+    // Decode the JSON file
+    $jsonData = json_decode($employeesJSON, true);
+
+    return $jsonData;
+}
+
+function updatePlayer($post)
+{
+    $jsonData = getJSON();
+    $id = $post['id'];
+    $player = '';
+    foreach ($jsonData as $key => $value) {
+        if ($value['id'] == $id) {
+            $player = $value;
+        }
+    }
+
+    foreach ($post as $key => $value) {
+        $player[$key] = $value;
+    }
+
+    array_push($jsonData, $player);
+
+    $json = json_encode($jsonData);
+
+    if (file_put_contents('../../resources/employees.json', $json)) {
+        header('location: ../../src/employee.php?player_updated_successfully');
+    } else {
+        header('location: ../../src/employee.php?error');
+    }
+}

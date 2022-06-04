@@ -22,6 +22,10 @@ function checkUrl($get)
     echo '<div class="alert alert-danger" role="alert">
         Something went wrong.
         </div>';
+  } elseif (isset($get['player_updated_successfully'])) {
+    echo '<div class="alert alert-success" role="alert">
+        Player Updated Succesfully.
+        </div>';
   }
 }
 

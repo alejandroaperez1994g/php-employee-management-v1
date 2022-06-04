@@ -18,7 +18,7 @@ Array.from(deleteButtons).map((button) => {
   });
 });
 
-confirmationButton.addEventListener("click", (e) => {
+confirmationButton.addEventListener("click", () => {
   deletePlayer(dataID);
 });
 
@@ -98,5 +98,6 @@ const updateDashboard = (data) => {
   deleteChildNodes(dashboardBody);
   Object.values(data).map((player) => {
     dashboardBody.appendChild(getTR(player));
+    //TODO agregar la classification of team en esete update para que quede parjo con el showAllData de php
   });
 };
