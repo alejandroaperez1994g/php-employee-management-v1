@@ -12,7 +12,8 @@ if (!isset($_SESSION['useremail'])) {
 
 <head>
     <title>Add Player</title>
-    <?php include './includes/head.php'; ?>
+
+    <?php include '../assets/html/header.html'; ?>
     <!-- Custom JS -->
     <script src="../assets/js/index.js" type="module"></script>
 </head>
@@ -308,7 +309,7 @@ if (!isset($_SESSION['useremail'])) {
 
 
 
-    <?php include './includes/footer.php'; ?>
+    <?php include '../assets/html/footer.html'; ?>
 
 
 </body>
