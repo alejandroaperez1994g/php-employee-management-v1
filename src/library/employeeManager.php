@@ -22,7 +22,7 @@ function showAllData()
         <td>{$value['age']}</td>
         <td>{$value['nationality']}</td>
         <td>
-        <a data-delete-button data-id='{$value['id']}' data-bs-toggle='modal' data-bs-target='#confirmation-delete' href='#'>
+        <a data-delete-button='true' data-id='{$value['id']}' data-bs-toggle='modal' data-bs-target='#confirmation-delete' href='#'>
         <i class='fa fa-trash text-danger'></i>
         </a>
         </td>
@@ -108,7 +108,8 @@ function deletePlayer($data)
 function findUser($id)
 {
     // Read the JSON file 
-    $employeesJSON = file_get_contents('../resources/employees.json');
+    // $employeesJSON = file_get_contents('../resources/employees.json');
+    $employeesJSON = file_get_contents('../../resources/employees.json');
 
     // Decode the JSON file
     $jsonData = json_decode($employeesJSON, true);
