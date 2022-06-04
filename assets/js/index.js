@@ -1,6 +1,15 @@
 const deleteButtons = document.querySelectorAll("[data-delete-button]");
+const trElements = document.querySelectorAll("[data-tr]");
 const confirmationButton = document.getElementById("deletePlayer");
 let dataID;
+
+Array.from(trElements).map((tr) => {
+  tr.addEventListener("click", (e) => {
+    if (e.target.classList[1] === "fa-trash") return;
+    const id = e.target.parentElement.getAttribute("data-id");
+    location.href = "employee.php?id=" + id;
+  });
+});
 
 Array.from(deleteButtons).map((button) => {
   button.addEventListener("click", (e) => {
@@ -68,6 +77,9 @@ const getTR = (player) => {
   tdPosition.textContent = player.position;
   tdAge.textContent = player.age;
   tdNationality.textContent = player.nationality;
+  tr.setAttribute("data-id", player.id);
+  tr.setAttribute("data-tr", "");
+  tr.classList.add("dashboard-row");
 
   tr.appendChild(tdPlayer);
   tr.appendChild(tdNickName);

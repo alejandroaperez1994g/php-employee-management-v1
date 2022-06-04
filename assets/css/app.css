@@ -50,6 +50,13 @@
 .breadcrumb-header .breadcrumb {
   justify-content: flex-end;
 }
+
+.dashboard-row:hover {
+  cursor: pointer;
+  background: #59317e;
+  color: white;
+}
+
 .alert.alert-dismissible .close:focus,
 .custom-switch .custom-control-label:focus,
 .dropdown .dropdown-toggle:focus,

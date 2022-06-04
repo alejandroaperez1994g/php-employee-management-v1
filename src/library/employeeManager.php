@@ -11,7 +11,7 @@ function showAllData()
 
     foreach ($jsonData as $key => $value) {
         echo "
-        <tr data-id='{$value['id']}'>
+        <tr class='dashboard-row' data-id='{$value['id']}' data-tr>
         <td>{$value['player']}</td>
         <td>{$value['nickname']}</td>
         <td>{$value['price']}</td>
