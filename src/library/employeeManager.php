@@ -58,14 +58,14 @@ function addPlayer($post)
     $jsonData = json_decode($employeesJSON, true);
     $lastId = end($jsonData)['id'];
 
-
-
     // New Array
     $newArray = array();
     $newArray['id'] = $lastId + 1;
 
     foreach ($post as $key => $value) {
-        $newArray[$key] = $value;
+        if ($key != 'id') {
+            $newArray[$key] = $value;
+        }
     }
 
     array_push($jsonData, $newArray);
@@ -100,5 +100,80 @@ function deletePlayer($data)
         echo $json;
     } else {
         echo 'no se guardo';
+        //TODO hacer una redireccion a dashboard.php con error por url para advertir al usuario de error al eliminar
+    }
+}
+
+
+function findUser($id)
+{
+    // Read the JSON file 
+    $employeesJSON = file_get_contents('../resources/employees.json');
+
+    // Decode the JSON file
+    $jsonData = json_decode($employeesJSON, true);
+
+    $player = '';
+
+    foreach ($jsonData as $key => $value) {
+        if ($value['id'] == $id) {
+            $player = $value;
+        }
+    }
+
+    return $player;
+}
+
+function showPositions($position)
+{
+    $positions = array('GOALKEEPER', 'DEFENDER', 'MIDFIELDER', 'FORWARD', 'CENTERBACK', 'WINGER');
+
+    foreach ($positions as $key => $value) {
+        if ($position == $value) {
+            echo "<option selected >$value</option>";
+        } else {
+            echo "<option>$value</option>";
+        }
+    }
+}
+function showTeams($team)
+{
+    $teams = array(
+        'FRONTEND',
+        'BACKEND',
+        'FULLSTACK',
+    );
+
+    foreach ($teams as $key => $value) {
+        if ($team == $value) {
+            echo "<option selected >$value</option>";
+        } else {
+            echo "<option>$value</option>";
+        }
+    }
+}
+
+function showNationalitys($nationality)
+{
+    $nationalitys = array(
+        'SPAIN',
+        'USA',
+        'ARGENTINA',
+        'CUBA',
+        'VENEZUELA',
+        'FRANCE',
+        'RUSSIA',
+        'BELARUS',
+        'ISRAEL',
+        'BRAZIL',
+        'PORTUGAL',
+    );
+
+    foreach ($nationalitys as $key => $value) {
+        if ($nationality == $value) {
+            echo "<option selected >$value</option>";
+        } else {
+            echo "<option>$value</option>";
+        }
     }
 }

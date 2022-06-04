@@ -5,8 +5,12 @@ if (!isset($_SESSION['useremail'])) {
     header("Location: ../index.php?invalid_permission");
 }
 
-?>
+require('./library/employeeManager.php');
 
+if (isset($_GET['id'])) {
+    $player =  findUser($_GET['id']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -146,10 +150,11 @@ if (!isset($_SESSION['useremail'])) {
                                         <form class="form" action='./library/employeeController.php?add_player' method="POST">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
+                                                    <input type="text" name='id' value="<?php echo $player['id'] ?>" hidden>
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PLAYER</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PLAYER NAME" name='player' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="PLAYER NAME" name='player' id="first-name-icon" value="<?php echo $player['player'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa-solid fa-futbol"></i>
                                                             </div>
@@ -161,14 +166,8 @@ if (!isset($_SESSION['useremail'])) {
                                                         <label for="first-name-icon">POSITION</label>
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <select class="form-select" name='position' id="basicSelect">
-                                                                    <option>SELECT YOUR POSITION</option>
-                                                                    <option>GOALKEEPER</option>
-                                                                    <option>DEFENDER</option>
-                                                                    <option>MIDFIELDER</option>
-                                                                    <option>FORWARD</option>
-                                                                    <option>CENTERBACK</option>
-                                                                    <option>WINGER</option>
+                                                                <select class="form-select" name='position' id="basicSelect" required>
+                                                                    <?php showPositions($player['position']) ?>
                                                                 </select>
                                                             </fieldset>
                                                         </div>
@@ -178,7 +177,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">FIRST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="FIRST NAME" name='first-name' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="FIRST NAME" name='first-name' id="first-name-icon" value="<?php echo $player['first-name'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -189,7 +188,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">LAST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="LAST NAME" name='last-name' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="LAST NAME" name='last-name' id="first-name-icon" value="<?php echo $player['last-name'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -200,7 +199,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">NICKNAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="NICKNAME" name='nickname' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="NICKNAME" name='nickname' id="first-name-icon" value="<?php echo $player['nickname'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -211,7 +210,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">AGE</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="AGE" name='age' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="AGE" name='age' id="first-name-icon" value="<?php echo $player['age'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -223,19 +222,8 @@ if (!isset($_SESSION['useremail'])) {
                                                         <label for="first-name-icon">NATIONALITY</label>
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <select class="form-select" name='nationality' id="basicSelect">
-                                                                    <option>SELECT YOUR COUNTRY</option>
-                                                                    <option>SPAIN</option>
-                                                                    <option>USA</option>
-                                                                    <option>ARGENTINA</option>
-                                                                    <option>CUBA</option>
-                                                                    <option>VENEZUELA</option>
-                                                                    <option>FRANCE</option>
-                                                                    <option>RUSSIA</option>
-                                                                    <option>BELARUS</option>
-                                                                    <option>ISRAEL</option>
-                                                                    <option>BRAZIL</option>
-                                                                    <option>PORTUGAL</option>
+                                                                <select class="form-select" name='nationality' id="basicSelect" required>
+                                                                    <?php showNationalitys($player['nationality']); ?>
                                                                 </select>
                                                             </fieldset>
                                                         </div>
@@ -245,7 +233,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">CONTACT</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="LINKEDIN PROFILE" name='contact' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="LINKEDIN PROFILE" name='contact' id="first-name-icon" value="<?php echo $player['contact'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-phone"></i>
                                                             </div>
@@ -267,7 +255,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PRICE</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PRICE" name='price' id="first-name-icon">
+                                                            <input type="text" class="form-control" placeholder="PRICE" name='price' id="first-name-icon" value="<?php echo $player['price'] ?>" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa-solid fa-sack-dollar"></i>
                                                             </div>
@@ -279,17 +267,15 @@ if (!isset($_SESSION['useremail'])) {
                                                         <label for="first-name-icon">TEAM</label>
                                                         <div class="position-relative">
                                                             <fieldset class="form-group">
-                                                                <select class="form-select" id="basicSelect" name='team'>
-                                                                    <option>SELECT YOUR TEAM</option>
-                                                                    <option>FRONTEND</option>
-                                                                    <option>BACKEND</option>
-                                                                    <option>FULLSTACK</option>
+                                                                <select class="form-select" id="basicSelect" name='team' required>
+                                                                    <?php showTeams($player['team']); ?>
                                                                 </select>
                                                             </fieldset>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-12 d-flex justify-content-end">
+                                                    <button class="btn btn-secondary me-1 mb-1">Return</button> //TODO agreagar una redireccion a dashboard.php x javascript
                                                     <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                                 </div>
                                             </div>
@@ -305,8 +291,6 @@ if (!isset($_SESSION['useremail'])) {
 
         </div>
     </div>
-
-
 
 
     <?php include '../assets/html/footer.html'; ?>
