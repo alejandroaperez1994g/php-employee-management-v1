@@ -68,6 +68,25 @@ const deleteChildNodes = (parent) => {
   }
 };
 
+const classifyTeams = (team) => {
+  const span = document.createElement("span");
+  switch (team) {
+    case "FRONTEND":
+      span.classList.add("badge", "bg-warning", "text-dark");
+      span.textContent = team;
+      break;
+    case "BACKEND":
+      span.classList.add("badge", "bg-danger");
+      span.textContent = team;
+      break;
+    case "FULLSTACK":
+      span.classList.add("badge", "bg-success");
+      span.textContent = team;
+      break;
+  }
+  return span;
+};
+
 const getTR = (player) => {
   const tr = document.createElement("tr");
   const tdPlayer = document.createElement("td");
@@ -98,7 +117,8 @@ const getTR = (player) => {
   tdPlayer.textContent = player.player;
   tdNickName.textContent = player.nickname;
   tdPrice.textContent = player.price;
-  tdTeam.textContent = player.team;
+  tdTeam.append(classifyTeams(player.team));
+
   tdPosition.textContent = player.position;
   tdAge.textContent = player.age;
   tdNationality.textContent = player.nationality;
