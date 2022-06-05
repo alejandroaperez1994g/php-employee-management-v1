@@ -17,4 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'add_p
     $playerInfo = findUser($data['id']);
     $json = json_encode($playerInfo);
     echo $json;
+} elseif ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'all_data') {
+    $data  = getAllData();
+    $json = json_encode($data);
+    echo $json;
 }

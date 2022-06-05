@@ -1,16 +1,17 @@
-const deleteButtons = document.querySelectorAll("[data-delete-button]");
-const trElements = document.querySelectorAll("[data-tr]");
-const confirmationButton = document.getElementById("deletePlayer");
+const confirmationButton = document.getElementById("delete-playerButton");
 
 let dataID;
 
-Array.from(trElements).map((tr) => {
-  tr.addEventListener("click", (e) => {
-    if (e.target.classList[1] === "fa-trash") return;
-    const id = e.target.parentElement.getAttribute("data-id");
-    playerInfo(id);
+const setEventListenerTrElements = () => {
+  const trElements = document.querySelectorAll("[data-tr]");
+  Array.from(trElements).map((tr) => {
+    tr.addEventListener("click", (e) => {
+      if (e.target.classList[1] === "fa-trash") return;
+      const id = e.target.parentElement.getAttribute("data-id");
+      playerInfo(id);
+    });
   });
-});
+};
 
 const playerInfo = (id) => {
   const response = fetch(
@@ -28,16 +29,19 @@ const playerInfo = (id) => {
 };
 
 const updatePlayerInfo = (id, data) => {
-  location.href = "employee.php";
+  location.href = `employee.php?id=${id}`;
   sessionStorage.setItem("playerInfo", JSON.stringify(data));
 };
 
-Array.from(deleteButtons).map((button) => {
-  button.addEventListener("click", (e) => {
-    e.preventDefault();
-    dataID = e.target.parentElement.getAttribute("data-id");
+const setEventListenerDeleteButtons = () => {
+  const deleteButtons = document.querySelectorAll("[data-delete-button]");
+  Array.from(deleteButtons).map((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      dataID = e.target.parentElement.getAttribute("data-id");
+    });
   });
-});
+};
 
 confirmationButton.addEventListener("click", () => {
   deletePlayer(dataID);
@@ -121,4 +125,22 @@ const updateDashboard = (data) => {
     dashboardBody.appendChild(getTR(player));
     //TODO agregar la classification of team en esete update para que quede parjo con el showAllData de php
   });
+  setEventListenerTrElements();
+  setEventListenerDeleteButtons();
+};
+
+const getAllData = () => {
+  const response = fetch(
+    "http://localhost:8080/php-employee-management-v1/src/library/employeeController.php?all_data",
+    {
+      method: "POST",
+      headers: { "content-type": "application/json; chartset=UTF-8" },
+    }
+  )
+    .then((response) => response.json())
+    .then((data) => updateDashboard(data));
+};
+
+window.onload = function () {
+  getAllData();
 };

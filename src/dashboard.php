@@ -122,7 +122,7 @@ if (!isset($_SESSION['useremail'])) {
                                     </tr>
                                 </thead>
                                 <tbody id='dashboard-body'>
-                                    <?php showAllData() ?>
+
                                 </tbody>
                             </table>
                         </div>
@@ -146,7 +146,7 @@ if (!isset($_SESSION['useremail'])) {
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <button type="button" id='deletePlayer' data-bs-dismiss="modal" class="btn btn-primary">Yes</button>
+                    <button type="button" id='delete-playerButton' data-bs-dismiss="modal" class="btn btn-primary">Yes</button>
                 </div>
             </div>
         </div>
