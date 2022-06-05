@@ -1,34 +1,16 @@
 <?php
 //* show all data from .json file to dashboard.php table
-function showAllData()
+function getAllData()
 {
 
     // Read the JSON file 
-    $employeeJSON = file_get_contents('../resources/employees.json');
+    $employeeJSON = file_get_contents('../../resources/employees.json');
 
     // Decode the JSON file
     $jsonData = json_decode($employeeJSON, true);
 
-    foreach ($jsonData as $key => $value) {
-        echo "
-        <tr class='dashboard-row' data-id='{$value['id']}' data-tr>
-        <td>{$value['player']}</td>
-        <td>{$value['nickname']}</td>
-        <td>{$value['price']}</td>
-        <td>";
-        echo classifyTeam($value['team']);
-        echo "</td>
-        <td>{$value['position']}</td>
-        <td>{$value['age']}</td>
-        <td>{$value['nationality']}</td>
-        <td>
-        <a data-delete-button='true' data-id='{$value['id']}' data-bs-toggle='modal' data-bs-target='#confirmation-delete' href='#'>
-        <i class='fa fa-trash text-danger'></i>
-        </a>
-        </td>
-    </tr>
-    ";
-    }
+
+    return $jsonData;
 }
 
 //* classify the team value and return respective badge
@@ -104,7 +86,7 @@ function deletePlayer($data)
     }
 }
 
-
+//* delete player from .json file using id
 function findUser($id)
 {
     // Read the JSON file 
@@ -125,60 +107,7 @@ function findUser($id)
     return $player;
 }
 
-function showPositions($position)
-{
-    $positions = array('GOALKEEPER', 'DEFENDER', 'MIDFIELDER', 'FORWARD', 'CENTERBACK', 'WINGER');
-
-    foreach ($positions as $key => $value) {
-        if ($position == $value) {
-            echo "<option selected >$value</option>";
-        } else {
-            echo "<option>$value</option>";
-        }
-    }
-}
-function showTeams($team)
-{
-    $teams = array(
-        'FRONTEND',
-        'BACKEND',
-        'FULLSTACK',
-    );
-
-    foreach ($teams as $key => $value) {
-        if ($team == $value) {
-            echo "<option selected >$value</option>";
-        } else {
-            echo "<option>$value</option>";
-        }
-    }
-}
-
-function showNationalitys($nationality)
-{
-    $nationalitys = array(
-        'SPAIN',
-        'USA',
-        'ARGENTINA',
-        'CUBA',
-        'VENEZUELA',
-        'FRANCE',
-        'RUSSIA',
-        'BELARUS',
-        'ISRAEL',
-        'BRAZIL',
-        'PORTUGAL',
-    );
-
-    foreach ($nationalitys as $key => $value) {
-        if ($nationality == $value) {
-            echo "<option selected >$value</option>";
-        } else {
-            echo "<option>$value</option>";
-        }
-    }
-}
-
+//*gets data from .json file
 function getJSON()
 {
     // Read the JSON file 
@@ -190,6 +119,7 @@ function getJSON()
     return $jsonData;
 }
 
+//* update a player's information
 function updatePlayer($post)
 {
     $jsonData = getJSON();
