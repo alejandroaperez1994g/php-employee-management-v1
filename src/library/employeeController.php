@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'add_p
     if ($_POST["id"] > 0) {
         updatePlayer($_POST);
     } else {
-        addPlayer($_POST);
+        addPlayer($_POST, $_FILES);
     }
 } elseif ($_SERVER['REQUEST_METHOD'] === "DELETE") {
     $data = json_decode(file_get_contents("php://input"), true);

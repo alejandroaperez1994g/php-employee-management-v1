@@ -145,7 +145,7 @@ if (!isset($_SESSION['useremail'])) {
                             <div class="card">
                                 <div class="card-content">
                                     <div class="card-body">
-                                        <form id='player-form' class="form" action='./library/employeeController.php?add_player' method="POST">
+                                        <form id='player-form' class="form" action='./library/employeeController.php?add_player' method="POST" enctype="multipart/form-data">
                                             <div class="row">
                                                 <div class="col-md-6 col-12">
                                                     <input type="text" name='id' id='id' hidden>
@@ -168,7 +168,7 @@ if (!isset($_SESSION['useremail'])) {
                                                                     <option>GOALKEEPER</option>
                                                                     <option>DEFENDER</option>
                                                                     <option>MIDFIELDER</option>
-                                                                    <option>FOWARD</option>
+                                                                    <option>FORWARD</option>
                                                                     <option>CENTERBACK</option>
                                                                     <option>WINGER</option>
                                                                 </select>

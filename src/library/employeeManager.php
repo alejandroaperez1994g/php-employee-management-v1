@@ -31,7 +31,7 @@ function classifyTeam($team)
 
 
 //* add form data to .json file
-function addPlayer($post)
+function addPlayer($post, $files)
 {
     // Read the JSON file 
     $employeesJSON = file_get_contents('../../resources/employees.json');
@@ -49,6 +49,10 @@ function addPlayer($post)
             $newArray[$key] = $value;
         }
     }
+
+    $path = saveProfilePicture($files, $newArray['id']);
+
+    $newArray['profile'] = $path;
 
     array_push($jsonData, $newArray);
 
@@ -141,6 +145,32 @@ function updatePlayer($post)
 
     if (file_put_contents('../../resources/employees.json', $json)) {
         header('location: ../../src/employee.php?player_updated_successfully');
+    } else {
+        header('location: ../../src/employee.php?error');
+    }
+}
+
+function saveProfilePicture($file, $id)
+{
+    $fileName = $file['profile']['name'];
+    $fileTempName = $file['profile']['tmp_name'];
+    $fileSize = $file['profile']['size'];
+    $fileError = $file['profile']['error'];
+
+    $fileExten = explode('.', $fileName);
+    $fileActExt = strtolower(end($fileExten));
+
+    $allowed = array('jpg', 'jpeg', 'png');
+
+    if (in_array($fileActExt, $allowed)) {
+        if ($fileError === 0) {
+            if ($fileSize < 5000000) {
+                $fileDestination = "../../assets/images/profiles/" . "{$id}-" . $fileName;
+                move_uploaded_file($fileTempName, $fileDestination);
+
+                return $fileDestination;
+            }
+        }
     } else {
         header('location: ../../src/employee.php?error');
     }
