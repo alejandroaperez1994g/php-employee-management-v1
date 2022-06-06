@@ -83,6 +83,7 @@ function deletePlayer($data)
     }
 
     $json = json_encode($jsonData);
+
     if (file_put_contents('../../resources/employees.json', $json)) {
         echo $json;
     } else {
@@ -141,7 +142,7 @@ function updatePlayer($post, $files)
     foreach ($post as $key => $value) {
         $player[$key] = $value;
     }
-
+    $player['id'] = intval($player['id']);
 
     if (count($files) > 0) {
         $path = saveProfilePicture($files, $player['id']);
