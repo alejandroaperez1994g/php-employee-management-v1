@@ -15,7 +15,6 @@ returnButton.addEventListener("click", (e) => {
 });
 
 const updateForm = (playerInfo) => {
-  console.log(playerInfo);
   const playerId = document.getElementById("id");
   const player = document.getElementById("player");
   const playerPosition = document.getElementById("position");

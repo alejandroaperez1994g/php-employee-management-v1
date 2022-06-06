@@ -130,9 +130,11 @@ function updatePlayer($post, $files)
     $jsonData = getJSON();
     $id = $post['id'];
     $player = '';
+
     foreach ($jsonData as $key => $value) {
         if ($value['id'] == $id) {
             $player = $value;
+            unset($jsonData[$key]);
         }
     }
 
@@ -191,9 +193,6 @@ function addPlayerFromTable($post)
     // Decode the JSON file
     $jsonData = json_decode($employeesJSON, true);
     $lastId = end($jsonData)['id'];
-
-
-
 
     // New Array
     $newArray = array();
