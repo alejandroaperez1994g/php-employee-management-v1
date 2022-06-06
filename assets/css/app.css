@@ -57,6 +57,19 @@
   color: white;
 }
 
+.add-new-user:hover {
+  cursor: pointer;
+}
+
+.action__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  min-height: max-content;
+}
+
 .alert.alert-dismissible .close:focus,
 .custom-switch .custom-control-label:focus,
 .dropdown .dropdown-toggle:focus,

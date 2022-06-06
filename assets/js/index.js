@@ -1,4 +1,7 @@
+import { addNewRow } from "./utils.js";
+
 const confirmationButton = document.getElementById("delete-playerButton");
+const addNewUserButton = document.getElementById("add-new-user");
 
 let dataID;
 
@@ -59,7 +62,7 @@ const deletePlayer = (id) => {
     }
   )
     .then((response) => response.json())
-    .then((data) => updateDashboard(data));
+    .then((data) => updateDashboard(data)); //TODO pillar cuando se recive un error y mostrarlo al usuario con un mensaje
 };
 
 const deleteChildNodes = (parent) => {
@@ -125,7 +128,6 @@ const getTR = (player) => {
   tr.classList.add("dashboard-row");
   tr.setAttribute("data-id", player.id);
   tr.setAttribute("data-tr", "");
-  //TODO add function classify team
   tr.appendChild(tdPlayer);
   tr.appendChild(tdNickName);
   tr.appendChild(tdPrice);
@@ -143,7 +145,6 @@ const updateDashboard = (data) => {
   deleteChildNodes(dashboardBody);
   Object.values(data).map((player) => {
     dashboardBody.appendChild(getTR(player));
-    //TODO agregar la classification of team en esete update para que quede parjo con el showAllData de php
   });
   setEventListenerTrElements();
   setEventListenerDeleteButtons();
@@ -164,3 +165,9 @@ const getAllData = () => {
 window.onload = function () {
   getAllData();
 };
+
+addNewUserButton.addEventListener("click", () => {
+  addNewRow();
+});
+
+export { updateDashboard };

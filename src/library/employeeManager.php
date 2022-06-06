@@ -50,9 +50,10 @@ function addPlayer($post, $files)
         }
     }
 
-    $path = saveProfilePicture($files, $newArray['id']);
-
-    $newArray['profile'] = $path;
+    if (count($files) > 0) {
+        $path = saveProfilePicture($files, $newArray['id']);
+        $newArray['profile'] = $path;
+    }
 
     array_push($jsonData, $newArray);
 
@@ -86,7 +87,7 @@ function deletePlayer($data)
         echo $json;
     } else {
         echo 'no se guardo';
-        //TODO hacer una redireccion a dashboard.php con error por url para advertir al usuario de error al eliminar
+        //TODO hacer un mensaje de error para cuando haya problemas con la eliminacion, esto se hace en JS
     }
 }
 
@@ -124,7 +125,7 @@ function getJSON()
 }
 
 //* update a player's information
-function updatePlayer($post)
+function updatePlayer($post, $files)
 {
     $jsonData = getJSON();
     $id = $post['id'];
@@ -139,8 +140,13 @@ function updatePlayer($post)
         $player[$key] = $value;
     }
 
-    array_push($jsonData, $player);
 
+    if (count($files) > 0) {
+        $path = saveProfilePicture($files, $player['id']);
+        $player['profile'] = $path;
+    }
+
+    array_push($jsonData, $player);
     $json = json_encode($jsonData);
 
     if (file_put_contents('../../resources/employees.json', $json)) {
@@ -174,4 +180,35 @@ function saveProfilePicture($file, $id)
     } else {
         header('location: ../../src/employee.php?error');
     }
+}
+
+
+function addPlayerFromTable($post)
+{
+    // Read the JSON file 
+    $employeesJSON = file_get_contents('../../resources/employees.json');
+
+    // Decode the JSON file
+    $jsonData = json_decode($employeesJSON, true);
+    $lastId = end($jsonData)['id'];
+
+
+
+
+    // New Array
+    $newArray = array();
+    $newArray['id'] = $lastId + 1;
+
+    foreach ($post as $key => $value) {
+        if ($key != 'id') {
+            $newArray[$key] = $value;
+        }
+    }
+
+    array_push($jsonData, $newArray);
+
+    $json = json_encode($jsonData);
+    file_put_contents('../../resources/employees.json', $json);
+
+    return $json;
 }

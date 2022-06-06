@@ -5,7 +5,7 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'add_player') {
     if ($_POST["id"] > 0) {
-        updatePlayer($_POST);
+        updatePlayer($_POST, $_FILES);
     } else {
         addPlayer($_POST, $_FILES);
     }
@@ -20,5 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'add_p
 } elseif ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'all_data') {
     $data  = getAllData();
     $json = json_encode($data);
+    echo $json;
+} elseif ($_SERVER['REQUEST_METHOD'] === "POST" && $_SERVER['QUERY_STRING'] === 'add_player_table') {
+    $data = json_decode(file_get_contents("php://input"), true);
+    $json = addPlayerFromTable($data, $_FILES);
     echo $json;
 }

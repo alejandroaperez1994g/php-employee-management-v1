@@ -118,7 +118,7 @@ if (!isset($_SESSION['useremail'])) {
                                         <th>POSITION</th>
                                         <th>AGE</th>
                                         <th>NATIONALITY</th>
-                                        <th>EDIT</th>
+                                        <th> <i id="add-new-user" class="fa-solid fa-user-plus add-new-user"></i> </th>
                                     </tr>
                                 </thead>
                                 <tbody id='dashboard-body'>
