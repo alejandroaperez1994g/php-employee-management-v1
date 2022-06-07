@@ -29,7 +29,7 @@
                 </div>
                 <div class="sidebar-menu">
                     <ul class="menu">
-                        <li class="sidebar-item active">
+                        <li class="sidebar-item ">
                             <a href="./dashboard-info.html" class='sidebar-link'>
                                 <i class="fa fa-home text-success"></i>
                                 <span>Dashboard</span>
@@ -47,7 +47,7 @@
                                 <span>Add Player</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
+                        <li class="sidebar-item active">
                             <a href="./team.html" class='sidebar-link'>
                                 <i class="fa fa-users text-success"></i>
                                 <span>The Team</span>
@@ -122,78 +122,37 @@
             </nav>
             <div class="main-content container-fluid">
                 <div class="page-title">
-                    <h3>Dashboard</h3>
+                    <h3>Meet the Team</h3>
                 </div>
                 <section class="section">
-                    <div class="row mb-2">
-                        <div class="col-xl-4 col-md-12 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between p-md-1">
-                                        <div class="d-flex flex-row">
-                                            <div class="align-self-center">
-                                                <i class="fa fa-users text-warning fa-3x me-4"></i>
-                                            </div>
-                                            <div>
-                                                <h4>PLAYERS</h4>
-                                                <h2 id='total-players' class="h1 mb-0">0</h2>
-                                            </div>
-                                        </div>
+                    <div class="cards-container">
+                        <div class="cards-column">
+                            <div class="card_team">
+                                <div class="card-body-player">
+                                    <div player class="player"> 
+                                        <div class="flag">🇪🇸</div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between p-md-1">
-                                        <div class="d-flex flex-row">
-                                            <div class="align-self-center" style="width: min-content;">
-                                                <i class="fa-solid fa-laptop-code fa-3x me-4"></i>
-                                            </div>
-                                            <div>
-                                                <h4>FRONTEND</h4>
-                                                <h2 id='frontend' class="h1 mb-0">0</h2>
-                                            </div>
-                                        </div>
+                                <div class="player-info"> 
+                                    <div class="audio">
+                                        <i class="fa-solid fa-play icon_audio"></i>
                                     </div>
+                                    <div class="player_name">Javier Fernandez</div>
+                                        
+                                </div>
+                                <div class="icons-flex">
+                                    <span class="dorsal">
+                                        <span class="dorsaltext">DORSAL</span>03
+                                    </span>
+                                    <span class="age"><span class="ageNumber">AGE</span>41</span>
+                                    
+                                    <span class="teamIcon"><i class="fa-solid fa-user-secret fa-team-icon"></i></span>
+                                    <span class="linkedin"><i class="fa-brands fa-linkedin fa-team-icon"></i></span>
                                 </div>
                             </div>
+                            
                         </div>
-                        <div class="col-xl-4 col-md-12 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between p-md-1">
-                                        <div class="d-flex flex-row">
-                                            <div class="align-self-center">
-                                                <i class="fa-solid fa-gears fa-3x me-4"></i>
-                                            </div>
-                                            <div>
-                                                <h4>BACKEND</h4>
-                                                <h2 id='backend' class="h1 mb-0">0</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-md-12 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="d-flex justify-content-between p-md-1">
-                                        <div class="d-flex flex-row">
-                                            <div class="align-self-center">
-                                                <i class="fa-solid fa-user-secret fa-3x me-4"></i>
-                                            </div>
-                                            <div>
-                                                <h4>FULLSTACK</h4>
-                                                <h2 id='fullstack' class="h1 mb-0">0</h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+ 
                     </div>
                 </section>
             </div>

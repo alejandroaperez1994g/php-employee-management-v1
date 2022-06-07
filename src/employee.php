@@ -25,11 +25,10 @@ if (!isset($_SESSION['useremail'])) {
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header" style="height: 50px;margin-top: -30px">
-                    <i class="fa fa-users text-success me-4"></i>
-                    <span>ELMS</span>
+                    <div class="logo"><img src="../assets/images/Assembler-Logo.png"></div>
                 </div>
                 <div class="sidebar-menu">
-                    <ul class="menu">
+                <ul class="menu">
                         <li class="sidebar-item ">
                             <a href="../assets/html/dashboard-info.html" class='sidebar-link'>
                                 <i class="fa fa-home text-success"></i>
@@ -38,14 +37,20 @@ if (!isset($_SESSION['useremail'])) {
                         </li>
                         <li class="sidebar-item">
                             <a href="./dashboard.php" class='sidebar-link'>
-                                <i class="fa fa-users text-success"></i>
+                                <i class="fa-solid fa-people-group text-success"></i>
                                 <span>Manage Team</span>
                             </a>
                         </li>
                         <li class="sidebar-item active">
                             <a href="./employee.php" class='sidebar-link'>
-                                <i class="fa fa-users text-success"></i>
+                                <i class="fa-solid fa-user-plus text-success"></i>
                                 <span>Add Player</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="../assets/html/team.html" class='sidebar-link'>
+                                <i class="fa fa-users text-success"></i>
+                                <span>The Team</span>
                             </a>
                         </li>
                     </ul>
