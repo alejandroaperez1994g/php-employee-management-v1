@@ -34,3 +34,19 @@ const updateDashboardCards = async () => {
 };
 
 updateDashboardCards();
+
+const checkTime = () => {
+  const firstTime = sessionStorage.getItem("time");
+  const currentTime = new Date().getTime();
+  const min = Math.floor((currentTime - firstTime) / 60000);
+  return min;
+};
+
+window.addEventListener("load", () => {
+  if (!sessionStorage.getItem("time")) {
+    sessionStorage.setItem("time", new Date().getTime());
+  } else {
+    const time = checkTime();
+    setTimeout(() => {});
+  }
+});
