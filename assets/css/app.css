@@ -1213,7 +1213,6 @@ footer {
   background: #6c757d;
   min-height: 100vh;
   padding-top: 100px;
-  background-image: url(../images/background/auth.jpg);
 }
 #auth .card {
   box-shadow: 0 5px 15px rgba(36, 104, 146, 0.6);

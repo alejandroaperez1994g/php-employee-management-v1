@@ -4,13 +4,11 @@ require('./sessionHelper.php');
 
 
 
-// echo "<pre>";
-// print_r($_SERVER);
-// echo "</pre>";
-
 
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     authUser($_POST);
+} else if ($_SERVER['REQUEST_METHOD'] === "LOGOUT") {
+    automaticLogout();
 } else {
     logout();
 }

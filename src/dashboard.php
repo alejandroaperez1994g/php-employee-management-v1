@@ -15,6 +15,7 @@ if (!isset($_SESSION['useremail'])) {
     <?php include '../assets/html/header.html'; ?>
     <!-- Custom JS -->
     <script src="../assets/js/index.js" type="module"></script>
+    <script src="../assets/js/automatic.js" type="module"></script>
 </head>
 
 <body>
@@ -22,10 +23,10 @@ if (!isset($_SESSION['useremail'])) {
         <div id="sidebar" class='active'>
             <div class="sidebar-wrapper active">
                 <div class="sidebar-header" style="height: 50px;margin-top: -30px">
-                <div class="logo"><img src="../assets/images/Assembler-Logo.png"></div>
+                    <div class="logo"><img src="../assets/images/Assembler-Logo.png"></div>
                 </div>
                 <div class="sidebar-menu">
-                <ul class="menu">
+                    <ul class="menu">
                         <li class="sidebar-item ">
                             <a href="../assets/html/dashboard-info.html" class='sidebar-link'>
                                 <i class="fa fa-home text-success"></i>
