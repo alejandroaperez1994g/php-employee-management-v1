@@ -87,7 +87,7 @@ function deletePlayer($data)
     if (file_put_contents('../../resources/employees.json', $json)) {
         echo $json;
     } else {
-        echo 'no se guardo';
+        echo json_encode('error');
         //TODO hacer un mensaje de error para cuando haya problemas con la eliminacion, esto se hace en JS
     }
 }

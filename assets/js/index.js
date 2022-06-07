@@ -51,18 +51,31 @@ confirmationButton.addEventListener("click", () => {
 });
 
 const deletePlayer = (id) => {
-  const response = fetch(
-    "http://localhost:8080/php-employee-management-v1/src/library/employeeController.php",
-    {
-      method: "DELETE",
-      headers: { "content-type": "application/json; chartset=UTF-8" },
-      body: JSON.stringify({
-        id: id,
-      }),
-    }
-  )
-    .then((response) => response.json())
-    .then((data) => updateDashboard(data)); //TODO pillar cuando se recive un error y mostrarlo al usuario con un mensaje
+  try {
+    const response = fetch(
+      "http://localhost:8080/php-employee-management-v1/src/library/employeeController.php",
+      {
+        method: "DELETE",
+        headers: { "content-type": "application/json; chartset=UTF-8" },
+        body: JSON.stringify({
+          id: id,
+        }),
+      }
+    )
+      .then((response) => response.json())
+
+      .then((data) => checkForError(data));
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
+const checkForError = (data) => {
+  if (data != "error") {
+    updateDashboard(data);
+  } else {
+    alert("Check Permissions");
+  }
 };
 
 const deleteChildNodes = (parent) => {
