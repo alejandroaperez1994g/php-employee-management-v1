@@ -28,7 +28,7 @@ if (!isset($_SESSION['useremail'])) {
                     <div class="logo"><img src="../assets/images/Assembler-Logo.png"></div>
                 </div>
                 <div class="sidebar-menu">
-                <ul class="menu">
+                    <ul class="menu">
                         <li class="sidebar-item ">
                             <a href="../assets/html/dashboard-info.html" class='sidebar-link'>
                                 <i class="fa fa-home text-success"></i>
@@ -157,7 +157,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PLAYER</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PLAYER NAME" name='player' id="player" required>
+                                                            <input type="text" class="form-control" placeholder="PLAYER NAME" name='player' id="player" pattern="[a-zA-Z0-9]+" minlength="4" maxlength="10" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa-solid fa-futbol"></i>
                                                             </div>
@@ -185,7 +185,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name">FIRST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="FIRST NAME" name='name' id="firstName" required>
+                                                            <input type="text" class="form-control" placeholder="FIRST NAME" name='name' id="firstName" pattern="[a-zA-Z]+" minlength="4" maxlength="10" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -196,7 +196,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">LAST NAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="LAST NAME" name='lastName' id="lastName" required>
+                                                            <input type="text" class="form-control" placeholder="LAST NAME" name='lastName' id="lastName" pattern="[a-zA-Z]+" minlength="4" maxlength="10" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -207,7 +207,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">NICKNAME</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="NICKNAME" name='nickname' id="nickname" required>
+                                                            <input type="text" class="form-control" placeholder="NICKNAME" name='nickname' id="nickname" pattern="[a-zA-Z]+" minlength="4" maxlength="10" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -218,7 +218,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">AGE</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="AGE" name='age' id="age" required>
+                                                            <input type="number" class="form-control" placeholder="AGE" name='age' id="age" min="10" max="80" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -262,7 +262,7 @@ if (!isset($_SESSION['useremail'])) {
                                                     <div class="form-group has-icon-left">
                                                         <label for="first-name-icon">PROFILE</label>
                                                         <div class="position-relative">
-                                                            <input type="file" class="form-control" placeholder="" name='profile' id="profile">
+                                                            <input type="file" class="form-control" placeholder="" name='profile' id="profile" pattern="https://.\.linkedin\.com">
                                                             <div class="form-control-icon">
                                                                 <i class="fa fa-user"></i>
                                                             </div>
@@ -271,9 +271,9 @@ if (!isset($_SESSION['useremail'])) {
                                                 </div>
                                                 <div class="col-md-3 col-12">
                                                     <div class="form-group has-icon-left">
-                                                        <label for="first-name-icon">PRICE</label>
+                                                        <label for="first-name-icon">DORSAL</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PRICE" name='price' id="price" required>
+                                                            <input type="number" class="form-control" placeholder="DORSAL" name='price' id="price" min="1" max="80" required>
                                                             <div class="form-control-icon">
                                                                 <i class="fa-solid fa-sack-dollar"></i>
                                                             </div>
