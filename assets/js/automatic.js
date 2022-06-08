@@ -25,7 +25,7 @@ const setAutomaticLogout = () => {
 const interval = setInterval(() => {
   const time = checkTime();
   stopInterval(time);
-}, 1000);
+}, 10000);
 
 //* 4- stop the interval if the time is greater than 10 minutes
 const stopInterval = (min) => {
