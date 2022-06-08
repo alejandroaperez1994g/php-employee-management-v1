@@ -70,7 +70,7 @@ const getSpecialRow = () => {
   const inputPrice = document.createElement("input");
   inputPrice.setAttribute("type", "text");
   inputPrice.id = "input-price";
-  inputPrice.setAttribute("placeholder", "PRICE");
+  inputPrice.setAttribute("placeholder", "KIT NUMBER");
   inputPrice.classList.add("form-control");
   tdPrice.append(inputPrice);
 

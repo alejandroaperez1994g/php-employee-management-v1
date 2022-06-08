@@ -1,3 +1,5 @@
+
+
 async function displayTeam() {
   const response = await fetch("../../resources/employees.json"); //Obtener los datos del archivo json
   const data = await response.json(); //Convertir los datos a json
@@ -10,13 +12,37 @@ async function renderTeam() {
   const teamPlayers = await displayTeam();
   Object.values(teamPlayers).forEach((player) => {
     cardsColumn.append(createCard(player));
-    console.log(player);
-  });
+
+  }); 
+  const audioPlayIcons = document.querySelectorAll("[data-audio]")
+  setEventListenersAudio(audioPlayIcons);
 }
+
+function setEventListenersAudio (audioElementsList) {
+  Array.from(audioElementsList).forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      const audioElement = e.target.parentElement
+      const audioPath = audioElement.getAttribute("data-audio")
+    if (audioPath != "..undefined") {
+      const audio = new Audio(audioPath);
+      audio.play();
+    } else {
+      const audio = new Audio('../audio/default.mp3');
+      audio.play();
+    }
+
+    
+
+    },{once: true});
+  })
+}
+
+
 
 renderTeam();
 
 function createCard(playerData) {
+
   const cardTeam = document.createElement("div");
   cardTeam.classList.add("card_team");
   const cardBodyPlayer = document.createElement("div");
@@ -25,7 +51,7 @@ function createCard(playerData) {
   const player = document.createElement("div");
   player.classList.add("player"); //background-image: silueta.png;
   player.style.backgroundImage = `url(..${playerData.profile?.slice(12)})`; //replace png image player
-  console.log(playerData.profile?.slice(12));
+
   cardBodyPlayer.append(player);
   const flag = document.createElement("div");
   flag.classList.add("flag");
@@ -34,12 +60,16 @@ function createCard(playerData) {
   const playerInfo = document.createElement("div");
   playerInfo.classList.add("player-info");
   cardTeam.append(playerInfo);
+
+  //Audio 
   const audio = document.createElement("div");
+  audio.setAttribute("data-audio", `..${playerData.audio?.slice(12)}`)
   audio.classList.add("audio");
   playerInfo.append(audio);
   const icon = document.createElement("i");
   icon.classList.add("fa-solid", "fa-play", "icon_audio");
   audio.append(icon);
+
   const playerName = document.createElement("div");
   playerName.classList.add("player_name");
   playerInfo.append(playerName);

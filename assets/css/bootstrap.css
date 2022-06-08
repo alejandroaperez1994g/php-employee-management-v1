@@ -9630,6 +9630,10 @@ fieldset:disabled .btn {
   color: #241534;
 }
 
+.audio :hover {
+  cursor: pointer;
+}
+
 .icon_audio {
   font-size: 25px;
   color: #241534;

@@ -51,8 +51,16 @@ function addPlayer($post, $files)
     }
 
     if (count($files) > 0) {
-        $path = saveProfilePicture($files, $newArray['id']);
-        $newArray['profile'] = $path;
+
+        if (isset($files['profile'])) {
+            $path = saveProfilePicture($files, $newArray['id']);
+            $newArray['profile'] = $path;
+        }
+
+        if (isset($files['audio'])) {
+            $pathAudio = saveProfileAudio($files, $newArray['id']);
+            $newArray['audio'] = $pathAudio;
+        }
     }
 
     array_push($jsonData, $newArray);
@@ -145,8 +153,16 @@ function updatePlayer($post, $files)
     $player['id'] = intval($player['id']);
 
     if (count($files) > 0) {
-        $path = saveProfilePicture($files, $player['id']);
-        $player['profile'] = $path;
+
+        if (isset($files['profile'])) {
+            $path = saveProfilePicture($files, $player['id']);
+            $player['profile'] = $path;
+        }
+
+        if (isset($files['audio'])) {
+            $pathAudio = saveProfileAudio($files, $player['id']);
+            $player['audio'] = $pathAudio;
+        }
     }
 
     array_push($jsonData, $player);
@@ -175,6 +191,32 @@ function saveProfilePicture($file, $id)
         if ($fileError === 0) {
             if ($fileSize < 5000000) {
                 $fileDestination = "../../assets/images/profiles/" . "{$id}-" . $fileName;
+                move_uploaded_file($fileTempName, $fileDestination);
+
+                return $fileDestination;
+            }
+        }
+    } else {
+        header('location: ../../src/employee.php?error');
+    }
+}
+
+function saveProfileAudio($file, $id)
+{
+    $fileName = $file['audio']['name'];
+    $fileTempName = $file['audio']['tmp_name'];
+    $fileSize = $file['audio']['size'];
+    $fileError = $file['audio']['error'];
+
+    $fileExten = explode('.', $fileName);
+    $fileActExt = strtolower(end($fileExten));
+
+    $allowed = array('mp3');
+
+    if (in_array($fileActExt, $allowed)) {
+        if ($fileError === 0) {
+            if ($fileSize < 5000000) {
+                $fileDestination = "../../assets/audio/" . "{$id}-" . $fileName;
                 move_uploaded_file($fileTempName, $fileDestination);
 
                 return $fileDestination;

@@ -118,7 +118,7 @@ if (!isset($_SESSION['useremail'])) {
                                     <tr>
                                         <th>PLAYER</th>
                                         <th>NICKNAME</th>
-                                        <th>PRICE</th>
+                                        <th>DORSAL</th>
                                         <th>TEAM</th>
                                         <th>POSITION</th>
                                         <th>AGE</th>
