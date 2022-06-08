@@ -18,6 +18,7 @@ if (!isset($_SESSION['useremail'])) {
   <!-- Custom JS -->
   <!-- <script src="../assets/js/index.js" type="module"></script> -->
   <script src="../assets/js/player.js" type="module"></script>
+  <script src="../assets/js/automatic.js" type="module"></script>
 </head>
 
 <body>
