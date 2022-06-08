@@ -29,7 +29,7 @@ const interval = setInterval(() => {
 
 //* 4- stop the interval if the time is greater than 10 minutes
 const stopInterval = (min) => {
-  if (min >= 10) {
+  if (min >= 30) {
     clearInterval(interval);
     sessionStorage.removeItem("time");
     setAutomaticLogout();
