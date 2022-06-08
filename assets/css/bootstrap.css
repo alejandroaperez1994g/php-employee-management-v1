@@ -238,8 +238,8 @@ sup {
   top: -0.5em;
 }
 a {
-  color: #0d6efd;
-  text-decoration: underline;
+  color: inherit;
+  text-decoration: inherit;
 }
 a:hover {
   color: #0a58ca;
@@ -9624,7 +9624,6 @@ fieldset:disabled .btn {
   color: #1d1634;
   text-transform: uppercase;
   padding: 6px 0px;
-  font-weight: 500;
 }
 .audio {
   margin: auto 0px;

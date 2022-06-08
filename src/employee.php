@@ -271,11 +271,11 @@ if (!isset($_SESSION['useremail'])) {
                                                 </div>
                                                 <div class="col-md-3 col-12">
                                                     <div class="form-group has-icon-left">
-                                                        <label for="first-name-icon">PRICE</label>
+                                                        <label for="first-name-icon">DORSAL</label>
                                                         <div class="position-relative">
-                                                            <input type="text" class="form-control" placeholder="PRICE" name='price' id="price" required>
+                                                            <input type="text" class="form-control" placeholder="KIT NUMBER" name='price' id="price" required>
                                                             <div class="form-control-icon">
-                                                                <i class="fa-solid fa-sack-dollar"></i>
+                                                                <i class="fa-solid fa-shirt"></i>
                                                             </div>
                                                         </div>
                                                     </div>
