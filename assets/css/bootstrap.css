@@ -2688,6 +2688,7 @@ fieldset:disabled .btn {
   color: #fff;
   background-color: #475f7b;
   border-color: #475f7b;
+  width: -webkit-fill-available;
 }
 .btn-check:focus + .btn-secondary,
 .btn-secondary:focus,
