@@ -1,4 +1,14 @@
 const dashboardInfo = document.getElementById("app");
+const playAudio = document.getElementById("play-audio");
+
+playAudio.addEventListener(
+  "click",
+  () => {
+    const audio = new Audio("../audio/presentation.mp3");
+    audio.play();
+  },
+  { once: true }
+);
 
 //*get all data from .json file employees.json
 const getAllData = async () => {

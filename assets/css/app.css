@@ -1361,3 +1361,7 @@ footer {
 .bg-gray-700 {
   background-color: #4a5568 !important;
 }
+
+.play-button:hover {
+  cursor: pointer;
+}
