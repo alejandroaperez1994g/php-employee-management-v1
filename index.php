@@ -25,8 +25,9 @@
                 <div class="col-md-5 col-sm-12 mx-auto">
                     <div class="card pt-4">
                         <div class="card-body">
-                            <div class="text-center mb-5">
-                                <h3>Sign In</h3>
+                            <div class="text-center mb-5 login-flex">
+                                <img class="logo_Assembler" src="./assets/images/Assembler-Logo.png">
+                                <h3 class="text-login">Sign In</h3>
                             </div>
                             <form action="./src/library/loginController.php" method="POST">
                                 <div class="form-group position-relative has-icon-left">

@@ -1349,7 +1349,7 @@ progress {
   }
   .col-xl-4 {
     flex: 0 0 auto;
-    width: 33.3333333333%;
+    width: 50%;
   }
   .col-xl-5 {
     flex: 0 0 auto;
@@ -2647,15 +2647,16 @@ fieldset:disabled .btn {
 }
 .btn-primary {
   color: #000;
-  background-color: #5a8dee;
-  border-color: #5a8dee;
+  background-color: #7d87ae;
+  border-color: #7d87ae;
+  width: -webkit-fill-available;
 }
 .btn-check:focus + .btn-primary,
 .btn-primary:focus,
 .btn-primary:hover {
   color: #000;
-  background-color: #739ef1;
-  border-color: #6b98f0;
+  background-color: #8994be;
+  border-color: #8994be;
 }
 .btn-check:focus + .btn-primary,
 .btn-primary:focus {
@@ -4159,6 +4160,8 @@ fieldset:disabled .btn {
 .card-body {
   flex: 1 1 auto;
   padding: 1rem;
+  overflow-x: auto;
+  width: 98%;
 }
 .card-title {
   margin-bottom: 0.5rem;
@@ -9580,7 +9583,7 @@ fieldset:disabled .btn {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  width: 340px;
+  width: 320px;
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
@@ -9591,6 +9594,12 @@ fieldset:disabled .btn {
   background-image: url(../images/sideB.jpg);
   background-size: cover;
   background-position: left;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
 }
 
 .player {
@@ -9681,8 +9690,8 @@ fieldset:disabled .btn {
 
 .teamIcon {
   background-color: #4f4f6d;
-  padding: 15px 20px;
-  font-size: 50px;
+  padding: 20px 10px;
+  font-size: 45px;
   font-family: sans-serif;
   color: #9199b9;
   display: flex;
@@ -9697,8 +9706,8 @@ fieldset:disabled .btn {
 }
 
 .linkedin {
-  padding: 15px 20px;
-  font-size: 50px;
+  padding: 20px 10px;
+  font-size: 45px;
   font-family: sans-serif;
   color: #9199b9;
   display: flex;
@@ -9716,4 +9725,45 @@ fieldset:disabled .btn {
   align-items: normal;
   align-content: normal;
   gap: 1em;
+}
+
+.logo_Assembler {
+  width: 50%;
+  margin: auto;
+}
+
+.text-login {
+  display: block;
+  font-size: 20px;
+  height: 0px;
+  font-weight: 300;
+}
+
+.audio-margin {
+  margin: auto;
+}
+
+.card-play {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #231433;
+  background-clip: border-box;
+  border-bottom: 11px solid #a3abcb;
+  border-radius: 0.36rem;
+  color: aliceblue;
+  width: 98%;
+  margin: 20px auto;
+  box-shadow: 2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+    12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+    22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+    100px 100px 80px rgba(0, 0, 0, 0.07);
+}
+
+.TextWelcome {
+  color: aliceblue;
 }
